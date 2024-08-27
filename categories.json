@@ -1,0 +1,10 @@
+
+
+{
+    "categories": ["Marmitas", "Combos" , "Massas" , "Carnes", "Especial", "Bebidas"],
+    "Massas": ["Lasanhas", "Macarrão", "Sobas"],
+    "Carnes": ["Bovina", "Suína", "Aves", "Peixes", "Petiscos", "Polpetone"],
+    "Combos": ["Combos"],
+    "Especial": ["Especiais", "Saladas", "Vegetarianos", "Veganos", "Fit", "Adicionais"],
+    "Bebidas": ["Bebidas"]
+}
