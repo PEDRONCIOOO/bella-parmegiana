@@ -1,0 +1,16 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bundle/controller.js",
+  "type": "module",
+  "scripts": {
+    "watch:js": "parcel watch ./controller.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mercadopago": "^2.0.9",
+    "parcel": "^2.12.0"
+  }
+}

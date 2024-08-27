@@ -1,0 +1,62 @@
+.checkout-fail-wrapper {
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1em;
+
+  font-family: "Poppins", sans-serif;
+
+  gap: 2em;
+
+  max-width: 500px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.checkout-icon-wrapper {
+  padding: 2em;
+  background-color: red;
+
+  width: fit-content;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.checkout-icon-wrapper svg {
+  fill: #fff;
+  height: 48px;
+  width: 48px;
+}
+
+.checkout-fail-wrapper span {
+  font-weight: 500;
+}
+
+.checkout-fail-btn {
+  appearance: button;
+  width: 300px;
+  background-color: #ffb005;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: 0.4s;
+}
+
+.checkout-fail-btn:hover {
+  background-color: rgb(167, 114, 0);
+}

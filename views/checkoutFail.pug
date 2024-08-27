@@ -1,0 +1,26 @@
+extends base 
+
+block content 
+    .section-checkout-wrap
+      .section-navigation-checkout
+        .section-navigation.your-cart-show.active-checkout
+          span Informa&ccedil;&otilde;es
+          .section-navigation.number-navigation-checkout 1
+        .section-navigation-spacer
+          .section-navigation-spacer-loading.full
+        .section-navigation.checkout-details.active-checkout
+          span Pagamento
+          .number-navigation-checkout 2
+        .section-navigation-spacer
+          .section-navigation-spacer-loading.full
+        .section-navigation.complete-order.active-checkout
+          span Finaliza&ccedil;&atilde;o
+          .number-navigation-checkout 3
+      .checkout-fail-wrapper 
+        .checkout-icon-wrapper
+          svg
+                use(xlink:href=`/img/icons.svg#icon-error`)
+        span Houve um problema com o processamento do seu pedido, por favor tente novamente!
+        
+
+        button.checkout-fail-btn Tentar Novamente

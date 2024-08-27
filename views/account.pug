@@ -1,0 +1,27 @@
+extends base
+
+block content
+
+  .user-page-wrapper
+    .user-page
+      .navigation
+        include _accountNav
+      .user-info
+        form.name-email(id='update-user-form')
+          h2 Suas configura&ccedil;&otilde;es de conta
+          span Nome:
+          input(type='text', value=`${user.name}`).user-name
+          span Número de Celular:
+          input(type='tel', value=`${user.phoneNumber}` ).user-number
+          span Email:
+          input(type='email', value=`${user.email}` readonly).user-email
+          button(type='submit' form='update-user-form').update-user-btn.update-info-btn Salvar Configura&ccedil;&otilde;es
+        form.change-passwords(id='update-password-form')
+          h2 Trocar de senha
+          span Senha atual
+          input(type='password', placeholder='••••••••', required).password-current
+          span Nova senha
+          input(type='password', placeholder='••••••••', required).password-new
+          span Confirme a senha
+          input(type='password', placeholder='••••••••', required).password-confirm
+          button(type='submit' form='update-password-form').update-user-btn.update-password-btn Salvar Senha

@@ -1,0 +1,262 @@
+/* CARRINHO DE PEDIDOS TO BUY */
+
+.shop-cart-menu-display {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 12;
+  width: 400px;
+  height: 100vh;
+}
+
+.shopping-cart-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+  fill: white;
+  cursor: pointer;
+  background: #000;
+  border-radius: 50%;
+  padding: 0 5px 0px 5px;
+}
+
+.shop-cart-buy {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2em;
+  position: absolute;
+  max-width: 300px;
+  max-height: 300px;
+  background-color: #fff;
+}
+
+.close-cart-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+}
+
+.title-cart {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+}
+.title-cart span {
+  font-size: 15px;
+  color: #000;
+  font-weight: 900;
+}
+.title-cart svg {
+  width: 30px;
+  height: 30px;
+  fill: #000000;
+}
+
+.valores-pedidos {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 1em;
+}
+
+.valores-pedidos span {
+  color: #333;
+  font-weight: 500;
+}
+
+.subtotais-taxa {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtotais-taxa span {
+  font-weight: 500;
+}
+
+.valores-totais span {
+  font-weight: 500;
+}
+
+.button-buy-cart {
+  position: absolute;
+  bottom: 0;
+  background-color: #fdbd31;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 15px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: var(--transition-1);
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+.button-buy-cart::after {
+  background-clip: padding-box;
+  background-color: #ffb005;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media (max-width: 375px) {
+  .shop-cart-menu-display {
+    width: 100%;
+  }
+  .title-cart span {
+    font-size: 18px;
+  }
+  .title-cart img {
+    width: 45px;
+    height: 45px;
+  }
+  .valores-pedidos span {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .valores-pedidos span {
+    font-size: 18px;
+  }
+}
+/* =================================================================== */
+
+.pedidos-cart {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  width: 100%;
+  height: fit-content;
+  max-height: 60vh;
+  gap: 1em;
+  background-color: #ffffff7a;
+}
+
+.pedidos-cart::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #00000038;
+}
+
+.pedidos-cart > span {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart-item {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  gap: 5px;
+  padding: 0 5px;
+
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  color: black;
+}
+
+.shopping-cart-item-image {
+  height: 75px;
+  width: 75px;
+
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.shopping-cart-remove {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+
+  right: 5px;
+  top: 5px;
+
+  cursor: pointer;
+}
+
+.shopping-cart-item-image img {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.shopping-cart-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 40px 0 10px;
+}
+
+.shopping-cart-item-name-price {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.shopping-cart-item-name-price {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.shopping-cart-item-options {
+  line-height: 0.2em;
+  font-size: 12px;
+  padding: 0 3px;
+}
+
+.shopping-cart-item-name-price p {
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.shopping-cart-item-options b {
+  color: #333;
+}
+
+.shopping-cart-item-options li {
+  color: #555;
+  line-height: 1;
+  display: flex;
+  gap: 5px;
+}
+
+@media (min-width: 320px) {
+  .shopping-cart-item-name-price p {
+    font-size: 12px;
+  }
+}

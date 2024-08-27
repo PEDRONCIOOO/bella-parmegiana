@@ -1,0 +1,59 @@
+extends base
+
+mixin categoryBox(name,icon)
+    .category-box(class=`${name === "Tudo"?"category-box-active":''}` data-name=`${name}` data-subcategories=`${name==="Tudo"?"all":subCategories[name]}`)
+        svg.category-box-icon
+            use(href=`/img/icons.svg#icon-${icon}`)
+        p=name
+
+mixin subCategory(name)
+    .section-subcategory=name 
+
+block content
+    .bg-design 
+      img(src="/img/home/images/shape-5.png", alt="")
+    .bg-design2 
+      img(src="/img/home/images/shape-5.png", alt="")
+    .section-menu-options.hidden
+      svg.section-menu-options-close-btn
+        use(href="/img/icons.svg#icon-close")
+      .recipe-left
+        .recipe-image
+          img(src='#', alt='')
+        .menu-recipe-info
+          h2.menu-recipe-name Fil&eacute; a Parmegiana
+          span.menu-recipe-serving-size  Serve 1 pessoa 
+          span.menu-recipe-ingredients
+            | Tomate, Tomate, Tomate, Tomate, Tomate, Tomate, Tomate, Tomate,
+          span.menu-recipe-description
+            | Tomate, Tomate, Tomate, Tomate, Tomate, Tomate, Tomate, Tomate,
+      .recipe-right
+        form.recipe-options
+          span DESCRI&Ccedil;&Acirc;O
+          .recipe-observations
+            p OBSERVA&Ccedil;&Otilde;ES DO PEDIDO
+            input(type='text', showcurrentandmaxlength='true', maxlength='100')
+        .menu-price-button
+          .menu-price-button-controls
+            button.menu-price-button-control(data-goto="0") 
+              svg
+                use(href=`/img/icons.svg#icon-minus`)
+            span.menu-price-button-quantity(data-price="0") 1
+            button.menu-price-button-control(data-goto="2") 
+              svg
+                use(href=`/img/icons.svg#icon-plus`)
+          button.menu-price-button-buy(data-id=null) COMPRE &bull; R$ 100,00
+    .section-menu
+      .section-menu-title
+        p NOSSO MENU
+        h3 Peça agora mesmo com nosso Delivery Online!
+    .section-categories
+      .section-category
+        +categoryBox('Tudo',"all")
+        each category in categories
+            +categoryBox(category, category)
+             
+    .section-subcategories 
+    .section-delivery-container
+      .section-delivery
+      button.section-delivery-see-more(data-goTo="2") VER MAIS

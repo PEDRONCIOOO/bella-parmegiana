@@ -1,0 +1,35 @@
+@import url(general.css);
+@import url(preload.css);
+@import url(header.css);
+@import url(c1-hero.css);
+@import url(c2-service.css);
+@import url(c3-specialDish.css);
+@import url(c4-menu.css);
+@import url(c5-testimonials.css);
+@import url(c6-reservation.css);
+@import url(c7-features.css);
+@import url(c8-event.css);
+@import url(footer.css);
+@import url(backToTop.css);
+@import url(mediaQueries.css);
+@import url(account.css);
+@import url(toastNotification.css);
+@import url(accountAdresses.css);
+@import url(loginOverlay.css);
+@import url(adminMenu.css);
+@import url(adminMenuEdit.css);
+@import url(resetPassword.css);
+@import url(emailConfirm.css);
+@import url(menu.css);
+@import url(menuprincipal.css);
+@import url(carrinho.css);
+@import url(checkout.css);
+@import url(checkoutPayment.css);
+@import url(checkoutFail.css);
+@import url(error.css);
+@import url(employeeOrders.css);
+@import url(checkoutFinish.css);
+
+.hidden {
+  display: none;
+}

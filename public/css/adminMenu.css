@@ -1,0 +1,692 @@
+.admin-menu-nav {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+
+  width: 900px;
+}
+
+.admin-menu-nav-add-recipe,
+.admin-menu-nav-manage-recipe {
+  width: 45%;
+  text-align: center;
+
+  border-bottom: 2px solid black;
+}
+
+.admin-menu-nav-add-recipe:hover,
+.admin-menu-nav-manage-recipe:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.admin-menu-form {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  color: black;
+}
+
+.admin-menu-add-recipe-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 80%;
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 1em;
+
+  gap: 3em;
+}
+
+.admin-menu-add-recipe-form input {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0px;
+}
+
+.admin-menu-form-image {
+  background-image: url(../img/recipes/default.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: relative;
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  background-color: hsl(41, 100%, 51%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0px;
+
+  cursor: pointer;
+}
+
+.admin-menu-form-image span {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 230, 0, 0.473);
+  opacity: 0;
+  transition: 0.2s;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.admin-menu-form-image:hover span {
+  opacity: 1;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.admin-menu-form-image input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  transform: scale(100);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-menu-form-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.admin-menu-form-info {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.admin-menu-form-name-price {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  min-width: 100%;
+
+  gap: 15px;
+}
+
+.admin-menu-form-name-price input {
+  font-size: 14px;
+  padding: 5px 10px;
+  min-width: 3em;
+  max-width: 15em;
+  height: 1.5em;
+  width: 5.5em;
+  border: 2px solid #ccc;
+}
+
+.admin-menu-form-price {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.admin-menu-form-price::before {
+  content: "";
+  height: 6px;
+  border-block: 1px solid black;
+  flex-grow: 1;
+  display: flex;
+}
+.admin-menu-form-description {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* ======================================================================== */
+.admin-menu-form-big {
+  max-height: 500px;
+  height: fit-content;
+  width: fit-content;
+
+  border: 1px solid black;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 1em;
+}
+
+.admin-menu-form-big-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 40%;
+}
+
+.admin-menu-form-big-image {
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1/1;
+
+  background-color: hsl(41, 100%, 51%);
+
+  border-radius: 10px;
+}
+
+.admin-menu-form-big-info {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 10px;
+}
+
+.admin-menu-form-big-short-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-menu-form-big-name {
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid gray;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.admin-menu-form-big-servings {
+  font-size: 12px;
+  color: rgb(94, 94, 94);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 8fr;
+  gap: 5px;
+}
+
+.admin-menu-form-big-servings input {
+  width: 1.5em;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+.admin-menu-form-big-ingredients {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(231, 231, 231);
+  border-radius: 5px;
+  padding: 5px;
+
+  max-width: 100%;
+  font-size: 12px;
+}
+.admin-menu-form-big-ingredients span {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: hsla(41, 100%, 51%, 0.801);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  opacity: 0;
+  transition: 0.2s;
+
+  cursor: pointer;
+}
+
+.admin-menu-form-big-categories {
+  cursor: pointer;
+  justify-self: flex-end;
+  background-color: #ebebeb;
+
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.admin-menu-form-big-categories:hover {
+  background-color: #dadada;
+}
+
+.admin-menu-form-big-ingredients:hover span {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.admin-menu-form-big-description {
+  padding: 6px;
+  height: 100%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+.admin-menu-form-big-right {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.admin-menu-form-big-options {
+  width: 500px;
+
+  max-height: 90%;
+  height: 90%;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #e2e2e2;
+
+  display: grid;
+  gap: 0.5em;
+
+  grid-auto-rows: max-content;
+
+  overflow-y: scroll;
+}
+
+.admin-menu-form-big-options::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.admin-menu-form-big-options::-webkit-scrollbar-thumb {
+  background-color: rgb(194, 194, 194);
+  border-radius: 5px;
+}
+
+.admin-menu-form-big-options button {
+  border: 1px dashed gray;
+  border-radius: 5px;
+  background-color: rgb(238, 238, 238);
+  width: 100%;
+  height: 3em;
+}
+
+.admin-menu-form-big-option {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(204, 204, 204);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.admin-menu-form-big-option-title {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 5px;
+}
+.admin-menu-form-big-option-title h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.admin-menu-form-big-option-title span {
+  font-size: 16px;
+}
+
+.admin-menu-form-big-option-choices {
+  display: grid;
+  text-align: left;
+
+  gap: 2px;
+}
+
+.admin-menu-form-big-option-input {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 0 0;
+}
+.admin-menu-form-big-option-input label {
+  width: 100%;
+  padding: 10px;
+  text-align: start;
+}
+
+.admin-menu-form-big-option-input-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-menu-form-big-price {
+  height: 12%;
+
+  /* TODO:AQUUUUUUUUUUUI */
+  width: 70%;
+
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.admin-menu-form-big-price-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.admin-menu-form-svg {
+  height: 12px;
+  width: 12px;
+
+  fill: white;
+}
+
+.admin-menu-form-big-option-input-number button,
+.admin-menu-form-big-price-controls button {
+  width: 1.3em;
+  height: 1.3em;
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+
+  font-weight: 600;
+  color: white;
+
+  background-color: black;
+  text-align: center;
+
+  display: grid;
+  place-items: center;
+}
+
+.admin-menu-form-big-price > button {
+  width: 80%;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 0%);
+
+  color: white;
+  font-weight: 600;
+}
+
+/* =============================================================================================== */
+
+.admin-menu-ingredients-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  z-index: 10;
+}
+
+.admin-menu-ingredients-overlay span {
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.admin-menu-ingredients-overlay button {
+  height: 3em;
+  width: 10em;
+  border-radius: 5px;
+  background-color: hsl(41, 100%, 51%);
+
+  grid-column: 1/5;
+
+  justify-self: center;
+}
+
+.admin-menu-form-ingredients {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr 2fr);
+  gap: 1em;
+  padding: 1em;
+
+  background-color: white;
+
+  text-align: center;
+
+  color: black;
+}
+
+.admin-menu-form-ingredients input {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  padding: 0 1em;
+}
+/* ============================================================================ */
+.admin-menu-options-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 600px;
+  width: 300px;
+
+  background-color: white;
+  border: 1px solid rgb(163, 163, 163);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1em;
+
+  padding: 1em;
+
+  color: black;
+
+  z-index: 999999;
+}
+
+.admin-menu-options-overlay span {
+  font-size: 24px;
+  text-align: center;
+}
+
+.admin-menu-options {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  overflow-y: scroll;
+}
+
+.admin-menu-options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-menu-options::-webkit-scrollbar-thumb {
+  background-color: rgb(218, 218, 218);
+  border-radius: 5px;
+}
+.admin-menu-options-overlay button {
+  width: 40%;
+  height: 3em;
+
+  background-color: hsl(41, 100%, 51%);
+  border: none;
+  border-radius: 5px;
+}
+
+.admin-menu-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgb(236, 236, 236);
+  width: auto;
+  padding: 10px;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+
+  gap: 1em;
+}
+
+.admin-menu-option input {
+  width: auto;
+}
+
+.admin-menu-option label {
+  width: 100%;
+  font-size: 20px;
+}
+
+.admin-menu-form-submit {
+  height: 50px;
+  width: 100%;
+
+  background-color: black;
+
+  color: white;
+}
+/* ========================================================================== */
+
+.admin-menu-category-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  color: black;
+
+  z-index: 10;
+}
+
+.admin-menu-category-overlay > button {
+  background-color: hsl(41, 100%, 51%);
+  border-radius: 5px;
+}
+
+.admin-menu-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 250px;
+
+  background-color: rgb(221, 221, 221);
+  padding: 10px;
+}
+
+.admin-menu-categories-dropdown {
+  background-color: #ffffff;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1em;
+
+  border: 2px solid gray;
+}
+
+.admin-menu-categories-dropdown-svg {
+  fill: black;
+  height: 25px;
+  width: 25px;
+  transition: 0.2s;
+}
+
+.admin-menu-categories-dropdown .active {
+  transform: rotate(90deg);
+}
+
+.admin-menu-subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: 100%;
+  color: black;
+  background-color: rgb(235, 235, 235);
+
+  max-height: fit-content;
+  overflow: hidden;
+
+  border-radius: 5px;
+}
+
+.admin-menu-subcategory {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(1, 4fr 1fr);
+  background-color: white;
+  animation-name: dropdown;
+  animation-duration: 0.5s;
+}
+
+@keyframes dropdown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}
+
+.admin-menu-subcategory input {
+  height: 70%;
+}

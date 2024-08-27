@@ -1,0 +1,116 @@
+extends base
+
+mixin address(type,street,houseNumber,neighbourhood,city,state,CEP,compliment,id)
+  .address
+    input(type='radio', name="address", id=`${id}`)
+    label(for=`${id}`)
+      .address-type
+        svg.svg-icon-address
+          use(xlink:href=`../img/icons.svg#icon-${type}`)
+        |  #{type}
+      .address-street=`${street},${houseNumber}`
+      .address-neighbourhood=neighbourhood
+      .address-CEP=`${city},${state} ${CEP}`
+      .address-compliment=compliment
+
+block content
+    if user
+      form.address-form.hidden
+            select#residencia.address-form-input.address-form-input-residenceType(placeholder='Escolha o tipo de localização', name='Residencia')
+              option(value='Casa')
+                | Casa
+              option(value='Apartamento')
+                | Apartamento
+              option(value='Escritório')
+                | Escrit&oacute;rio
+            input.address-form-input.address-form-input-CEP(type='text', placeholder='CEP' required)
+            input.address-form-input.address-form-input-state.address-form-readonly(readonly='', placeholder='Estado' required)
+            input.address-form-input.address-form-input-city.address-form-readonly(readonly='', placeholder='Cidade' required)
+            input.address-form-input.address-form-input-neighbourhood.address-form-readonly(readonly='', placeholder='Bairro' required)
+            input.address-form-input.address-form-input-street.address-form-readonly(readonly='', placeholder='Rua' required)
+            input.address-form-input.address-form-input-house-number(type='number', placeholder='Número da casa' required)
+            input.address-form-input.address-form-input-compliment(placeholder='Complemento')
+            button.form-submit-btn(type='submit') Adicionar Endere&ccedil;o 
+            svg.close-form-btn
+              use(xlink:href='../img/icons.svg#icon-error')
+    .section-checkout-wrap
+      .section-navigation-checkout
+        .section-navigation.your-cart-show.active-checkout
+          span Informa&ccedil;&otilde;es
+          .section-navigation.number-navigation-checkout 1
+        .section-navigation-spacer
+          .section-navigation-spacer-loading.half
+        .section-navigation.checkout-details
+          span Pagamento
+          .number-navigation-checkout 2
+        .section-navigation-spacer
+          .section-navigation-spacer-loading
+        .section-navigation.complete-order
+          span Finaliza&ccedil;&atilde;o
+          .number-navigation-checkout 3
+      .display-cart-checkout
+        .requests-orders
+          each recipe in shoppingCart
+            - const price = recipe.price*recipe.quantity
+            - const totalPrice = price.toLocaleString("pt-BR",{style:"currency",currency: "BRL"})
+            .shopping-cart-item(data-id='664d1c3e62cc69eff843998f')
+              .shopping-cart-item-image
+                img(src=`/../img/recipes/${recipe.image}`, alt=recipe.name)
+              .shopping-cart-item-info
+                .shopping-cart-item-name-price
+                  p=`${recipe.name}`
+                  span=totalPrice
+                ul.shopping-cart-item-options
+                  li
+                    b Quantidade:
+                    | #{recipe.quantity}
+                  each option in recipe.options
+                    li
+                      b=`${option.optionTitle}:`
+                      - const arr = []
+                      - for (let i = 0; i< option.options.length; i++){arr.push(option.options[i].optionName)}
+                        |  #{arr.join(",")}          
+      .checkout-address
+        if user
+          .checkout-options
+            input(type="radio", name="checkout-delivery-method" id="checkout-retrieve")
+            label(for="checkout-retrieve") 
+              span Retirada
+              p Venha até o restaurante para retirar seu pedido
+            input(type="radio", name="checkout-delivery-method" id="checkout-delivery")
+            label(for="checkout-delivery") 
+              span Entrega
+              p Levaremos o pedido até sua casa 
+          form.checkout-choose-address-form.hidden
+            h1.checkout-address-title Nos diga o endere&ccedil;o de entrega
+            each address in user.addresses
+              +address(address.residenceType,address.street,address.houseNumber,address.neighbourhood,address.city,address.state,address.CEP,address.compliment,address._id)
+            if user.addresses.length < 3
+              button.address.addAdressBtn(type="button")
+                svg.svg-icon-plus
+                  use(xlink:href='../img/icons.svg#icon-plus')
+                | Adicionar Novo Endere&ccedil;o
+        else
+          .checkout-options
+            input(type="radio", name="checkout-delivery-method" id="checkout-retrieve")
+            label(for="checkout-retrieve") 
+              span Retirada
+              p Venha até o restaurante para retirar seu pedido
+            input(type="radio", name="checkout-delivery-method" id="checkout-delivery")
+            label(for="checkout-delivery") 
+              span Entrega
+              p Levaremos o pedido até sua casa 
+          form.checkout-address-form.hidden
+            h1.checkout-address-title Nos diga o endere&ccedil;o de entrega
+            select#residencia.address-form-input.address-form-input-residenceType(placeholder='Escolha o tipo de localização', name='Residencia')
+              option(value='Casa') Casa
+              option(value='Apartamento') Apartamento
+              option(value='Escritório') Escrit&oacute;rio
+            input.address-form-input.address-form-input-CEP(type='text', placeholder='CEP', required='required')
+            input.address-form-input.address-form-input-state.address-form-readonly(readonly='', placeholder='Estado', required='required')
+            input.address-form-input.address-form-input-city.address-form-readonly(readonly='', placeholder='Cidade', required='required')
+            input.address-form-input.address-form-input-neighbourhood.address-form-readonly(readonly='', placeholder='Bairro', required='required')
+            input.address-form-input.address-form-input-street.address-form-readonly(readonly='', placeholder='Rua', required='required')
+            input.address-form-input.address-form-input-house-number(type='number', placeholder='Número da casa', required='required')
+            input.address-form-input.address-form-input-compliment(placeholder='Complemento')
+      button.checkout-procceed Continuar para o pagamento

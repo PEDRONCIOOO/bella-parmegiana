@@ -1,0 +1,142 @@
+.admin-menu-grid {
+  display: grid;
+  gap: 40px;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  overflow-y: scroll;
+}
+
+.admin-menu-grid li {
+  position: relative;
+}
+
+.admin-menu-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-menu-card > div {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.admin-menu-edit-delete-btn {
+  position: absolute;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0);
+
+  bottom: 15px;
+  right: 0;
+
+  transition: 0.2s;
+  opacity: 0;
+
+  cursor: pointer;
+
+  z-index: 1;
+}
+
+.admin-menu-edit-svg {
+  height: 25px;
+  width: 25px;
+}
+
+li:hover .admin-menu-edit-delete-btn {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.admin-menu-card-banner {
+  background-color: hsl(41, 100%, 51%);
+  border-radius: 20px;
+}
+
+.admin-menu-img-cover {
+  height: 100px;
+
+  border-radius: 20px;
+}
+
+.admin-menu-title-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+}
+
+.admin-menu-card-title {
+  color: black;
+}
+.admin-menu-span {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+
+  font-size: 2.5rem;
+
+  color: black;
+}
+
+.admin-menu-span::before {
+  content: "";
+  height: 6px;
+  flex-grow: 1;
+  display: flex;
+  border-block: 1px solid rgb(0, 0, 0);
+}
+
+.admin-menu-card-text {
+  color: rgb(168, 168, 168);
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-size: 14px;
+
+  max-width: 100%;
+}
+
+.admin-menu-edit-confirm-delete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: fit-content;
+  width: 200px;
+  padding: 1em;
+  gap: 1em;
+
+  background-color: white;
+  color: black;
+  border: 1px solid;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.admin-menu-edit-confirm-delete button {
+  background-color: hsl(41, 100%, 51%);
+  border-radius: 5px;
+}

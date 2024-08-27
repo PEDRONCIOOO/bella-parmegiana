@@ -1,0 +1,124 @@
+.checkout-finish-wrapper {
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1em;
+
+  gap: 2em;
+
+  max-width: 500px;
+  margin: auto;
+
+  text-align: center;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.checkout-finish-approved {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.checkout-finish-id {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.checkout-finish-icon-wrapper {
+  padding: 2em;
+  background-color: rgb(141, 192, 0);
+
+  width: fit-content;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.checkout-finish-icon-wrapper svg {
+  fill: #fff;
+  height: 48px;
+  width: 48px;
+}
+
+.checkout-fail-wrapper span {
+  font-weight: 500;
+}
+
+.checkout-finish-btn,
+.checkout-fail-btn {
+  width: 300px;
+  background-color: #ffb005;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #ffb005;
+
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: 0.4s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1em;
+}
+
+.checkout-finish-btn-2 {
+  background-color: #fff;
+  color: #ffb005;
+  border: 2px solid #ffb005;
+
+  width: 300px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: 0.4s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1em;
+}
+
+.checkout-finish-btn-2:hover {
+  background-color: #ffb005;
+  color: #fff;
+  border: 2px solid #ffb005;
+}
+
+.checkout-finish-btn:hover,
+.checkout-fail-btn:hover {
+  background-color: #fff;
+  color: #ffb005;
+}
+
+.checkout-finish-btn svg {
+  fill: #fff;
+  height: 20px;
+  width: 20px;
+
+  transition: 0.4s;
+}
+.checkout-finish-btn:hover svg {
+  fill: #ffb005;
+}

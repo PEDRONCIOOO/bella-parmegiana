@@ -1,0 +1,60 @@
+extends base
+
+mixin address(type,street,houseNumber,neighbourhood,city,state,CEP,compliment,id)
+  .address
+    .address-type
+      svg.svg-icon-address
+        use(xlink:href=`../img/icons.svg#icon-${type}`)
+      |  #{type}
+    .address-street=`${street},${houseNumber}`
+    .address-neighbourhood=neighbourhood
+    .address-CEP=`${city},${state} ${CEP}`
+    .address-compliment=compliment
+    .address-config
+      button.address-delete(data-id=`${id}`)
+        svg.svg-icon
+          use(xlink:href='../img/icons.svg#icon-trash')
+        |  Deletar
+     
+
+block content
+  .delete-address-modal.hidden
+      p
+        | Tem certeza que quer deletar este endere&ccedil;o? Ele n&atilde;o poder&aacute; ser
+        | recuperado ap&oacute;s ser deletado
+      .delete-address-btns
+        button.delete-address-confirm-btn(data-id="") Deletar
+        button.delete-address-cancel-btn Cancelar
+  form.address-form.hidden
+      select#residencia.address-form-input.address-form-input-residenceType(placeholder='Escolha o tipo de localização', name='Residencia')
+        option(value='Casa')
+          | Casa
+        option(value='Apartamento')
+          | Apartamento
+        option(value='Escritório')
+          | Escrit&oacute;rio
+      input.address-form-input.address-form-input-CEP(type='text', placeholder='CEP' required)
+      input.address-form-input.address-form-input-state.address-form-readonly(readonly='', placeholder='Estado' required)
+      input.address-form-input.address-form-input-city.address-form-readonly(readonly='', placeholder='Cidade' required)
+      input.address-form-input.address-form-input-neighbourhood.address-form-readonly(readonly='', placeholder='Bairro' required)
+      input.address-form-input.address-form-input-street.address-form-readonly(readonly='', placeholder='Rua' required)
+      input.address-form-input.address-form-input-house-number(type='number', placeholder='Número da casa' required)
+      input.address-form-input.address-form-input-compliment(placeholder='Complemento')
+      button.form-submit-btn(type='submit') Adicionar Endere&ccedil;o 
+      svg.close-form-btn
+        use(xlink:href='../img/icons.svg#icon-error')
+              
+  .user-page-wrapper
+    .user-page
+      .navigation
+        include _accountNav
+      .user-info
+        h1.addresses-title Seus Endereços
+        .addresses-container
+          each address in user.addresses
+            +address(address.residenceType,address.street,address.houseNumber,address.neighbourhood,address.city,address.state,address.CEP,address.compliment,address.id)
+          if user.addresses.length < 3
+            button.address.addAdressBtn
+              svg.svg-icon-plus
+                use(xlink:href='../img/icons.svg#icon-plus')
+              | Adicionar Novo Endere&ccedil;o

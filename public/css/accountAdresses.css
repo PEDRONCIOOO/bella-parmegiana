@@ -1,0 +1,251 @@
+.addresses-title {
+  color: #ffb003;
+  text-align: center;
+  font-size: 22.753022px;
+}
+.addresses-container {
+  width: 100%;
+  height: fit-content;
+
+  display: grid;
+  justify-items: center;
+  gap: 0.5em;
+  grid-template-rows: (1fr);
+}
+
+.address {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  height: fit-content;
+  width: 300px;
+
+  color: black;
+  border: 1px solid rgb(87, 87, 87);
+  border-radius: 15px;
+
+  padding: 5px 10px;
+}
+
+.address input {
+  position: absolute;
+  top: 10px;
+  right: -130px;
+}
+
+.addAdressBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 2em;
+
+  height: 110px;
+  width: 300px;
+
+  background-color: rgb(240, 240, 240);
+
+  border: 1px dashed gray;
+}
+
+.svg-icon-plus {
+  fill: rgb(165, 165, 165);
+
+  height: 50px;
+  width: 50px;
+}
+
+.svg-icon-address {
+  height: 18px;
+  width: 18px;
+}
+
+.svg-icon {
+  height: 15px;
+  width: 15px;
+}
+
+.address:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.addAdressBtn:hover {
+  background-color: rgb(216, 216, 216);
+}
+
+.address-config {
+  display: flex;
+  gap: 1em;
+}
+
+.address-config button {
+  background-color: #ffb003;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+
+/* ===================================================================== */
+/* ADDRESS FORM */
+.address-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+
+  padding: 3em;
+  gap: 1em;
+
+  z-index: 99999;
+}
+
+.address-form-input {
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid gray;
+}
+#residencia {
+  width: 272px;
+  height: 30px;
+}
+
+.address-form-readonly {
+  background-color: rgb(218, 218, 218);
+  border: 1px solid gray;
+  cursor: default;
+}
+
+.address-form-readonly:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: initial;
+}
+
+.form-submit-btn {
+  background-color: #fdbd31;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 15px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: var(--transition-1);
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.form-submit-btn::after{
+  background-clip: padding-box;
+  background-color: #ffb005;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.close-form-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 25px;
+  width: 25px;
+
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.delete-address-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  color: black;
+
+  height: 200px;
+  width: 300px;
+
+  border: 1px solid;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 0 1em;
+
+  z-index: 10;
+}
+
+.delete-address-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.delete-address-confirm-btn {
+  height: 30px;
+  width: 90px;
+  background-color: #ffb003;
+  border: none;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 5px;
+}
+
+.delete-address-cancel-btn {
+  height: 30px;
+  width: 90px;
+  background-color: white;
+  border: 3px solid #ffb003;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+}

@@ -1,0 +1,54 @@
+.navbar-trattoria-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 1em;
+    width: 100%;
+    height: 10vh;
+    background-color: #000;
+    z-index: 9;
+}
+
+.navbar-little-trattoria{
+    width: 100%;
+    height: 3vh;
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff3d;
+}
+
+.navbar-trattoria-logo img{
+    width: 100px;
+}
+
+.navbar-trattoria-navigation{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-trattoria-login-register{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-trattoria-login-register button{
+    color: #fff;
+}
+
+
+
+/* HOME  */
+
+.trattoria-section-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.black-overlay{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000077;
+}

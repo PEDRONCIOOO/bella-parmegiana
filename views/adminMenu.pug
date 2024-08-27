@@ -1,0 +1,109 @@
+extends base
+
+block content
+
+  .user-page-wrapper
+    .user-page
+      .navigation
+        include _accountNav
+      .user-info
+        form.admin-menu-form
+          .admin-menu-add-recipe-form
+            button.admin-menu-form-image
+              span Escolher Imagem
+              input.admin-menu-form-image-input(type='file')
+            .admin-menu-form-info
+              .admin-menu-form-name-price
+                input.admin-menu-form-name(type='text', placeholder='Nome',     onkeypress="this.style.width = ((this.value.length + 1) * 16) +     'px';")
+                span.admin-menu-form-price
+                  input.admin-menu-input-price(type='text', placeholder='Preço', onkeypress="this.style.   width = ((this.value.length + 1) * 10) + 'px';")
+              textarea.admin-menu-form-description(name='Descrição', cols='30',     rows='2', placeholder='Descrição')
+          .admin-menu-form-big
+            .admin-menu-form-big-left
+              button.admin-menu-form-big-image.admin-menu-form-image
+                span Escolher Imagem
+                input.admin-menu-form-image-input(type='file')
+              .admin-menu-form-big-info
+                .admin-menu-form-big-short-info
+                  input.admin-menu-form-big-name(placeholder='Nome')
+                  span.admin-menu-form-big-servings
+                    | Serve 
+                    input.admin-menu-form-big-servingSize(type='number', value='1')
+                    |  Pessoa
+                    span.admin-menu-form-big-categories Escolher Categorias
+                  span.admin-menu-form-big-ingredients
+                    span Adicionar ingredientes
+                    .admin-menu-form-big-ingredients-text Tomate, Carne, Cebola, Espaguete, Molho, Alface, Br&oacute;colis, Frango
+                textarea.admin-menu-form-big-description(placeholder='Descrição')
+            .admin-menu-form-big-right
+              .admin-menu-form-big-options
+                button.admin-menu-form-big-add-options(type="button")  Adicionar Op&ccedil;&otilde;es
+                each option in options  
+                  .admin-menu-form-big-option.hidden(id=`${option._id}` data-config=`${option.type}-${option.required}-${option.name}-${option.needsPrice}` data-errorMessage=`${option.errorMessage}`)
+                    .admin-menu-form-big-option-title
+                      h1=`${option.title}:` 
+                      span=`${option.instructions}` 
+                    .admin-menu-form-big-option-choices
+                      each input in option.options
+                        .admin-menu-form-big-option-input
+                          label(for=`${option._id}-${input.optionName}`)
+                            | #{input.optionName}
+                            br
+                            | #{input.description || ''}
+                          if option.needsPrice
+                            input(type="text" placeholder=`${input.price || "Preço"}`,value=`${input.price || ''}`   name=`price-${input.optionName}`)
+                          else
+                            span
+                          if option.type === "number"
+                            .admin-menu-form-big-option-input-number
+                              button(data-goto='0') 
+                                svg.admin-menu-form-svg
+                                  use(xlink:href=`./img/icons.svg#icon-minus`)
+                              span 1
+                              button(data-goto='2') 
+                                svg.admin-menu-form-svg
+                                  use(xlink:href=`./img/icons.svg#icon-plus`)
+                          else
+                            input(name=`${option.name}`, type=`${option.type}`  id=`${option._id}-${input.optionName}`)                    
+              //- .admin-menu-form-big-price
+              //-   .admin-menu-form-big-price-controls
+              //-     button
+              //-       svg.admin-menu-form-svg
+              //-         use(xlink:href=`./img/icons.svg#icon-minus`)
+              //-     span 1
+              //-     button 
+              //-       svg.admin-menu-form-svg
+              //-         use(xlink:href=`./img/icons.svg#icon-plus`)
+              //-   button ADICIONAR &bull; 100,00 R$
+          button.admin-menu-form-submit(type='submit') Adicionar Receita
+    .admin-menu-ingredients-overlay.hidden
+      
+      span  Adicionar Ingredientes
+      form.admin-menu-form-ingredients
+        - for(let i = 0; i<10; i++)
+          label(for=`ingredient-${i+1}`)=`infrediente ${i+1}`
+          input.admin-menu-form-ingredients-ingredient(id=`ingredient-${i+1}` type='text')
+        button.admin-menu-form-ingredients-submit(type="submit") Adicionar
+    .admin-menu-options-overlay.hidden
+      span Escolha quais op&ccedil;&otilde;es quer ter neste prato
+      form#options-form.admin-menu-options(action='')
+        each option in options
+          .admin-menu-option
+            input(type='checkbox' id=`options-${option.id}`)
+            label(for=`options-${option.id}`)= option.name
+      button.admin-menu-option-btn(type='button') Confirmar
+    .admin-menu-category-overlay.hidden
+      span Escolha as categorias deste prato
+      form#categories-form.admin-menu-categories(action='')
+        each category in categories
+          button.admin-menu-categories-dropdown(type="button")
+            | #{category}
+            svg.admin-menu-categories-dropdown-svg
+              use(href='../img/icons.svg#icon-chevron-right')
+          .admin-menu-subcategories.hidden
+            each subCategory in subCategories[category]
+              .admin-menu-subcategory
+                label(for=`${subCategory}`)=subCategory
+                input.admin-menu-subcategory-input(type='checkbox', name=`${subCategory}` id=`${subCategory}`)
+            
+      button.admin-menu-categories-btn(type='button', form='categories-form') Confirmar   

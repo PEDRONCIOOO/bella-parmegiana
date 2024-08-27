@@ -1,0 +1,30 @@
+extends base
+
+block content
+    .user-page-wrapper
+        .user-page
+            .navigation
+                include _accountNav
+            .user-info
+                .admin-menu-edit-confirm-delete.hidden
+                    p
+                        | Tem certeza que deseja deletar este prato?
+                        br
+                        |Ele nao poder&aacute; ser recuperado.
+                    button.admin-menu-edit-confirm-delete-btn(data-id=undefined) Confirmar
+                ul.admin-menu-grid
+                  each recipe in recipes 
+                    li
+                        button.admin-menu-edit-delete-btn(data-id=`${recipe._id}`)
+                            svg.admin-menu-edit-svg
+                                use(xlink:href=`./img/icons.svg#icon-trash`)
+                        .admin-menu-card
+                            figure.admin-menu-card-banner.admin-menu-img-holder(style='--width: 100; --height: 100')
+                                img.admin-menu-img-cover(src=`img/recipes/${recipe.image}`, width='100', height='100', loading='lazy', alt=`${recipe.name}`)
+                            div
+                                .admin-menu-title-wrapper
+                                    h3.admin-menu-title-3
+                                        a.admin-menu-card-title(href='#')=recipe.name
+                                    -const price = recipe.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })    
+                                    span.admin-menu-span.admin-menu-title-2=price
+                                p.admin-menu-card-text.admin-menu-label-1=recipe.ingredients.join(',')

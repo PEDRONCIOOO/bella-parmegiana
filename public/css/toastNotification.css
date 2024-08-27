@@ -1,0 +1,153 @@
+.toaster-container {
+  position: fixed;
+  width: fit-content;
+  right: 0;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 0 20px 0 0;
+  z-index: 99999999;
+  transition: 1s;
+}
+
+.toast {
+  position: relative;
+  right: -100%;
+  animation: popIn 6s ease-in-out;
+
+  width: 400px;
+
+  z-index: 999999999999;
+}
+
+.toast.success {
+  background-color: #fff;
+
+  border-radius: 12px;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.103);
+  border-left: 6px solid #8bc225;
+  overflow: hidden;
+}
+
+.toast.error {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.103);
+  border-left: 6px solid #f44c40;
+  overflow: hidden;
+}
+
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .success {
+  height: 25px;
+  width: 25px;
+  background-color: #8bc225;
+  fill: white;
+  border-radius: 50000px;
+  padding: 5px;
+}
+
+.toast-content .error {
+  height: 25px;
+  width: 25px;
+  background-color: #f44c40;
+  fill: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666666;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.toast .close {
+  position: relative;
+  top: -30px;
+  right: -15px;
+  padding: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+}
+
+.toast .close:hover {
+  opacity: 1;
+}
+
+/* .toast .progress-success {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.toast .progress-success::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070f4;
+  animation: progressBar 5s linear;
+}
+
+.toast .progress-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.toast .progress-error::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f44c40;
+  animation: progressBar 5s linear;
+} */
+
+@keyframes popIn {
+  from {
+    right: -120%;
+  }
+  20% {
+    right: 0;
+  }
+  80% {
+    right: 0;
+  }
+  to {
+    right: -120%;
+  }
+}

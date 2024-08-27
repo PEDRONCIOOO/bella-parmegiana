@@ -1,0 +1,228 @@
+.shop-cart-menu-display.hidden
+    
+        svg.shopping-cart-close-btn
+            use(xlink:href=`/img/icons.svg#icon-close`)
+        .title-cart
+            svg
+                use(xlink:href=`/img/icons.svg#icon-cart`)
+            span Meu carrinho
+        .pedidos-cart
+            span Seu carrinho est&aacute; vazio.
+        .valores-pedidos
+            .subtotais-taxa
+                //- span Subtotal
+                //- span Taxa de Entrega
+                span Total
+            .valores-totais
+                //- span R$ 0,00
+                //- span R$ 8,00
+                span R$ 0,00
+        button.button-buy-cart Seu Carrinho Está Vazio
+        .bg-cart-menu
+            img(src="/img/home/images/img-pattern.svg", alt="" style='width: 400px; height: 100%;')
+.blur-overlay.hidden
+.form-container.log-in-container.hidden
+    button(class='close-form-btn')
+        svg
+            use(xlink:href=`/img/icons.svg#icon-error`)
+    img(src='/img/logobellan.png', width='170', height='130', alt='Bella - Logo' style='filter: drop-shadow(2px 4px 6px #000);')
+    form(id='loginForm')
+        input(id='email' type='email', placeholder='bellarestaurante@gmail.com')
+        input(id='password' type='password', placeholder='Senha')
+        button.forgot-password-btn(type="button") Esqueceu sua senha?
+        button(type='submit' form="loginForm") Entre
+        span.disclaimer-register-msg Faça o login para utilizar o Delivery Online!
+.form-container.forgot-password-container.hidden
+    button(class='close-form-btn')
+        svg
+            use(xlink:href=`/img/icons.svg#icon-error`)
+    img(src='/img/logobellan.png', width='100', height='50', alt='Bella - Logo')
+    form(id='forgotPasswordForm')
+        p Nos diga seu email para que possamos te ajudar!
+        input(id='emailForgot' type='email', placeholder='bellarestaurante@gmail.com')
+        button(type='submit' form="forgotPasswordForm") Enviar Email
+.form-container.register-container.hidden 
+    button(class='close-form-btn')
+        svg
+            use(xlink:href=`/img/icons.svg#icon-error`)
+    img(src='/img/logobellan.png', width='100', height='50', alt='Bella - Logo' style='filter: drop-shadow(2px 4px 6px #000);')
+    form(id='registerForm')
+        input(id='register-name' type='text', placeholder='Nome')
+        input(id='register-email' type='email', placeholder='seuemail@gmail.com')
+        input(id='register-phoneNumber' type='tel', placeholder='Número de Celular')
+        input(id='register-password' type='password', placeholder='Senha')
+        input(id='register-passwordConfirm' type='password', placeholder='Confirme a Senha')
+        button(type='submit' form="registerForm") Registrar-se
+
+.toaster-container
+header.header(data-header='')
+    .little-bar
+        .local-time
+            a.logo(href="https://maps.app.goo.gl/MpJrRcYRtC96GkcUA" target="_blank")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-location`)
+                p Rua Afonso Pena, 760 - Vila Aurora, Dourados, MS 79823-120
+            .separator
+            a.logo(href="#")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-time`)
+                p Diariamente: 08:00 Manhã ás 23:00 Noite
+        .whatsapp-call 
+            a.logo(href="tel:67998289272")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-phone`)
+                p Chamada Rápida (67)99828-9272
+            .separator
+            a.logo(href="https://wa.me/67998289272" target="_blank")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-whatsapp`)
+                p Whatsapp
+    .container.nav-container
+        a.logo(href='/')
+            img.logo-principal(src='/img/logobellan.png', alt='Bella - Home')
+        nav.navbar(data-navbar='')
+            button.close-btn(aria-label='close menu', data-nav-toggler='')
+                ion-icon(name='close-outline', aria-hidden='true')
+            a.logo(href='#')
+                img(src='/img/logobellan.png', width='180', height='50', alt='Bella - Home')
+            ul.navbar-list
+                li.navbar-item
+                    a.navbar-link.hover-underline(href='/' class=`${path === "/"? "active": ""}`)
+                        .separator
+                        span.span Home
+                li.navbar-item
+                    a.navbar-link.hover-underline(href='/menu' class=`${path === "/menu"? "active": ""}`)
+                        .separator
+                        span.span Menus/Delivery
+                li.navbar-item
+                    a.navbar-link.hover-underline(href='#about')
+                        .separator
+                        span.span Sobre N&oacute;s
+                li.navbar-item
+                    a.navbar-link.hover-underline(href='#')
+                        .separator
+                        span.span Contato
+            .text-center
+                p.headline-1.navbar-title Nos Visite!
+                address.body-4
+                    | Rua Afonso Pena, 760 - vila aurora , Dourados, MS 79823-120
+                p.body-4.navbar-text Abre: 8:00 Manh&atilde; - 23:00 Noite.
+                a.body-4.sidebar-link(href='mailto:bellarestaurante@gmail.com') bellarestaurante@gmail.com
+                .separator
+                p.contact-label CONTATO
+                a.body-1.contact-number.hover-underline(href='tel:+')
+                    | +55 6799971-0088
+        if user
+            a.icon-login-style(href='/me')
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-user`)
+                span.span Conta
+            .icon-login-style.logout-btn
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-exit`)
+                span.span Sair
+            .icon-login-style.shoppingCart-btn
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-cart`)
+                span.span Sacola
+            a.btn.btn-secondary.btn-navbar(href='/me')
+               span.text.text-1
+                svg.icon-user-login-big
+                    use(xlink:href=`/img/icons.svg#icon-user`)
+                | Minha Conta
+               span.text.text-2(aria-hidden='true' style='color: #ffb005;') 
+                svg.icon-user-login-big(style='fill: #ffb005;')
+                    use(xlink:href=`/img/icons.svg#icon-cog`)
+                | Configuraçoes
+            .login-register-buttons 
+                button.btn.btn-navbar.logout-btn
+                    span.text.text-1 
+                        | Sair
+                        svg.icon-user-login-big(style='fill: #ffb005;')
+                            use(xlink:href=`/img/icons.svg#icon-exit`)
+                    span.text.text-2(aria-hidden='true') volte logo
+            .cart-delivery.shoppingCart-btn
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-cart`)
+                .cart-count
+            button.nav-open-btn(aria-label='open menu', data-nav-toggler='')
+                span.line.line-1
+                span.line.line-2
+                span.line.line-3
+                overlay(data-nav-toggler='', data-overlay='')
+        else
+            .icon-login-style.login-btn
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-user`)
+                span.span Login
+            .icon-login-style.register-btn
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-register`)
+                span.span Registrar
+            .icon-login-style.shoppingCart-btn
+                svg.icon-user-login
+                    use(xlink:href=`/img/icons.svg#icon-cart`)
+                span.span Sacola
+            button.btn.btn-secondary.btn-navbar.login-btn
+                span.text.text-1 
+                    svg.icon-user-login-big
+                        use(xlink:href=`/img/icons.svg#icon-user`)
+                    | Login
+                span.text.text-2(aria-hidden='true' style="color: #ffb005") Conecte-se
+            button.btn.btn-navbar.register-btn
+                span.text.text-1 
+                    svg.icon-user-login-big(style='fill: #ffb005')
+                        use(xlink:href=`/img/icons.svg#icon-register`)
+                    | Registre-se
+                span.text.text-2(aria-hidden='true') Crie sua conta
+            .cart-delivery.shoppingCart-btn
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-cart`)
+                .cart-count
+            button.nav-open-btn(aria-label='open menu', data-nav-toggler='')
+                span.line.line-1
+                span.line.line-2
+                span.line.line-3
+            .overlay(data-nav-toggler='', data-overlay='')
+.menu-principal-home.hidden
+    .menu-principal-format 
+      .menu-principal-close
+        svg 
+            use(xlink:href=`/img/icons.svg#icon-close`)
+      .menu-title
+        img(src='/img/logobellan.png', alt='')
+      .navigation-menu-principal
+        ul.navbar-list.safe
+            .navbar-aside 
+                a(href="/")
+                    span Home
+                a(href="/menu") 
+                    span Menus/Delivery
+                a(href="#about")
+                    span Sobre Nós
+                a(href="/")
+                    span Contato 
+        .social-icons 
+            a.logo-icon(href="https://wa.me/67998289272" target="_blank")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-whatsapp`)
+                p Whatsapp
+            .separator
+            a.logo-icon(href="https://maps.app.goo.gl/MpJrRcYRtC96GkcUA" target="_blank")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-location`)
+                p Localização
+            .separator
+            a.logo-icon(href="tel:67998289272")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-phone`)
+                p Ligação
+            .separator
+            a.logo-icon(href="/menu")
+                svg
+                    use(xlink:href=`/img/icons.svg#icon-spoon-knife`)
+                p Delivery
+        .copyright-disclaimer 
+            span Copyright 2024 Bella Restaurante © Todos os Direitos Reservados.
+            
+        
