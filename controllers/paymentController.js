@@ -109,6 +109,7 @@ exports.startOrder = catchAsync(async (req, res, next) => {
     }
   );
 
+
   const payment = await response.json();
 
   if (payment.status !== "approved") {
@@ -116,7 +117,7 @@ exports.startOrder = catchAsync(async (req, res, next) => {
       status: "success",
     });
   }
-
+  console.log(payment);
   const order = await Order.findById(payment.external_reference);
 
   order.status = "aguardando";
