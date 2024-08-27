@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 // TODO: Add all categories and fix object
 
 const subCategories = [];
-const categories = fetch('categories.json')
-
-console.log(categories);
+const categories = process.env.MENU_CATEGORIES.split(",");
 
 categories.forEach((el) => {
   process.env[`MENU_SUBCATEGORIES_${el}`]
