@@ -5,7 +5,7 @@
   "main": "server.js",
   "source": "/",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "webhook": "whcli forward --token=7d4e8365-989b-493e-9648-9f89ebba51a8 --target=http://127.0.0.1:5000/api/v1/payment/webhooks"
