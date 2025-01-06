@@ -1,0 +1,212 @@
+body {
+  overflow-y: scroll;
+  height: fit-content;
+}
+
+.user-page-wrapper {
+  height: fit-content;
+  width: 100vw;
+  margin-top: 9em;
+  display: grid;
+  place-items: center;
+}
+
+.user-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  height: fit-content;
+  background-color: rgb(253, 253, 253);
+  box-shadow: 0px 0px 10px #0000004b;
+
+  position: relative;
+  bottom: 0;
+
+  padding: 0;
+}
+.navigation {
+  width: 270px;
+  background: linear-gradient(to bottom right, #ffb103, #ffcb03);
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  text-align: left;
+  padding: 3em 1em 0 0;
+}
+.navigation svg {
+  fill: #fff;
+  height: 20px;
+  width: 20px;
+}
+.navigation a {
+  color: #fff;
+  font-size: 20px;
+  transition: 0.1s;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0 0 0 2em;
+}
+.navigation a:hover {
+  border-left: 4px solid #fff;
+  transition: 0.15s;
+}
+.admin-navigation {
+  display: flex;
+  flex-direction: column;
+}
+.admin-navigation span {
+  color: #fff;
+  text-align: left;
+  text-align: center;
+}
+
+.user-info {
+  width: 80%;
+  height: 100%;
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+}
+.name-email,
+.change-passwords {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: left;
+}
+.change-passwords span,
+.name-email span {
+  color: black;
+
+  width: 300px;
+}
+
+.name-email input,
+.change-passwords input {
+  width: 300px;
+  background-color: rgb(236, 236, 236);
+
+  color: rgb(160, 160, 160);
+
+  padding: 5px;
+
+  border-radius: 5px;
+}
+/* ====================================================================== */
+.name-email .user-email {
+  cursor: default;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+}
+
+.name-email h2,
+.change-passwords h2 {
+  color: #ffb003;
+  text-align: center;
+}
+
+.update-user-btn {
+  padding: 10px 30px;
+
+  background-color: #ffb003;
+  color: black;
+
+  border-radius: 1000px;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+.separador {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ffb003;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(1170%, -120%);
+}
+
+.name-email button,
+.change-passwords button {
+  margin-top: 20px;
+}
+
+.side-nav--active {
+  border-left: 4px solid #fff;
+}
+
+.employee-navigation h1,
+.admin-navigation h1,
+.user-navigation h1 {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0.7em;
+}
+
+/* .admin-navigation, .employee-navigation{
+  display: none;
+} */
+@media (max-width: 768px) {
+  .navigation a {
+    padding: 0 0 0 1em;
+  }
+  .navigation a > span {
+    font-size: 16px;
+  }
+  .user-page-wrapper {
+    margin-top: 6.5em;
+  }
+}
+
+@media (max-width: 425px) {
+  .navigation a > span {
+    font-size: 12px;
+  }
+  .side-nav--active {
+    border: none;
+    border-bottom: 3px solid #fff;
+  }
+  .navigation a {
+    padding: 0 10px;
+  }
+  .user-page {
+    flex-direction: column;
+  }
+  .navigation {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .user-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .navigation a:hover {
+    border: none;
+  }
+  .user-navigation li > a {
+    flex-direction: column;
+    height: fit-content;
+    gap: 0px;
+  }
+  .user-info {
+    width: 100%;
+  }
+  .navigation {
+    padding: 1em 0;
+  }
+  .user-page-wrapper {
+    margin-top: 4em;
+  }
+}

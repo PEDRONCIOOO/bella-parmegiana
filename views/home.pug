@@ -1,0 +1,429 @@
+extends base
+block content
+  main
+    article
+      //
+        - #HERO
+      //- .preload-screen
+      //-   .preload(data-preaload='')
+      section#home.hero.text-center(aria-label='home')
+        ul.hero-slider(data-hero-slider='')
+          li.slider-item.active(data-hero-slider-item='')
+            .slider-bg
+              img.img-cover(src='./img/home/images/herosliderTest3.jpg', width='1880', height='950', alt='')
+            p.label-2.section-subtitle.slider-reveal Tradi&ccedil;&atilde;o &amp; Higiene
+            h1.display-1.hero-title.slider-reveal
+              | Para os amantes de
+              br
+              de parmegianas!
+            p.body-2.hero-text.slider-reveal
+              | Venha com a fam&iacute;lia e sinta a alegria de uma comida de dar &aacute;gua na boca
+            a.btn.btn-primary.slider-reveal(href='/menu')
+              span.text.text-1 Ver o nosso Menu
+              span.text.text-2(aria-hidden='true') Ver o nosso Menu
+          li.slider-item(data-hero-slider-item='')
+            .slider-bg
+              img.img-cover(src='./img/home/images/herosliderTest1.jpg', width='1880', height='950', alt='')
+            p.label-2.section-subtitle.slider-reveal atmosfera cativante
+            h1.display-1.hero-title.slider-reveal
+              | Um ambiente gostoso 
+              br
+              calmo e aconchegante
+            p.body-2.hero-text.slider-reveal
+              | Venha marcar um evento ou realizar uma ocasi&atilde;o especial conosco!
+            a.btn.btn-primary.slider-reveal(href='#')
+              span.text.text-1 Fale Conosco
+              span.text.text-2(aria-hidden='true') Fale Conosco
+          li.slider-item(data-hero-slider-item='')
+            .slider-bg
+              img.img-cover(src='./img/home/images/herosliderTest2.jpg', width='1880', height='950', alt='')
+            p.label-2.section-subtitle.slider-reveal incr&iacute;vel &amp; delicioso
+            h1.display-1.hero-title.slider-reveal
+              | Aonde cada sabor 
+              br
+              te conta uma hist&oacute;ria
+            p.body-2.hero-text.slider-reveal
+              | Venha com a fam&iacute;lia e amigos, desfrute de um ambiente &uacute;nico!
+            a.btn.btn-primary.slider-reveal(href='#')
+              span.text.text-1 Veja nosso Menu
+              span.text.text-2(aria-hidden='true') Veja nosso Menu
+        button.slider-btn.prev(aria-label='slide to previous', data-prev-btn='')
+          ion-icon(name='chevron-back')
+        button.slider-btn.next(aria-label='slide to next', data-next-btn='')
+          ion-icon(name='chevron-forward')
+        a.hero-btn.has-after(href='#')
+          img(src='./img/home/images/hero-icon.png', width='48', height='48', alt='booking icon')
+          span.label-2.text-center.span RESERVE SUA MESA
+      //
+        - #SERVICE
+      section.section.service.bg-black-10.text-center(aria-label='service')
+        .container
+          p.section-subtitle.label-2 SABORES PARA REALEZA
+          h2.headline-1.section-title Oferecemos de tudo!
+          p.section-text
+            | A excel&ecirc;ncia gastron&ocirc;mica, enfatizando ingredientes frescos, t&eacute;cnicas culin&aacute;rias refinadas e criatividade na apresenta&ccedil;&atilde;o. Esses elementos combinados resultam em uma experi&ecirc;ncia culin&aacute;ria &uacute;nica e memor&aacute;vel, elevando a comida a um n&iacute;vel superior de qualidade e sabor.
+          ul.grid-list
+            li
+              .service-card
+                a.has-before(href='/menu', class='hover:shine')
+                  figure.card-banner.img-holder(style='--width: 285; --height: 336;')
+                    img.img-cover(src='./img/home/images/marmitaMenu.jpg', width='285', height='336', loading='lazy', alt='Almoços/Marmitas')
+                .card-content
+                  h3.title-4.card-title
+                    a(href='#') Almo&ccedil;os/Marmitas
+                  a.btn-text.hover-underline.label-2(href='#') Ver menu
+            li
+              .service-card
+                a.has-before(href='/menu', class='hover:shine')
+                  figure.card-banner.img-holder(style='--width: 285; --height: 336;')
+                    img.img-cover(src='./img/home/images/aperitivosMenu.jpg', width='285', height='336', loading='lazy', alt='Aperitivos Bella')
+                .card-content
+                  h3.title-4.card-title
+                    a(href='#') Petiscos
+                  a.btn-text.hover-underline.label-2(href='#') Ver menu
+            li
+              .service-card
+                a.has-before(href='/menu', class='hover:shine')
+                  figure.card-banner.img-holder(style='--width: 285; --height: 336;')
+                    img.img-cover(src='./img/home/images/drinksMenu.jpg', width='285', height='336', loading='lazy', alt='Drinks')
+                .card-content
+                  h3.title-4.card-title
+                    a(href='/menu') Drinks
+                  a.btn-text.hover-underline.label-2(href='/menu') Ver menu
+          img.shape.shape-1.move-anim(src='./img/home/images/shape-1.png', width='246', height='412', loading='lazy', alt='shape')
+          img.shape.shape-2.move-anim(src='./img/home/images/shape-2.png', width='343', height='345', loading='lazy', alt='shape')
+      //
+        - #EVENT
+      section.section.event.bg-white-10(aria-label='event')
+        .container
+          p.section-subtitle.label-2.text-center Atualiza&ccedil;&otilde;es Recentes
+          h2.section-title.headline-1.text-center Pr&oacute;ximos Eventos
+          ul.grid-list
+            li
+              .event-card.has-before(class='hover:shine')
+                .card-banner.img-holder(style='--width: 350; --height: 450;')
+                  img.img-cover(src='./img/home/images/event-1.jpg', width='350', height='450', loading='lazy', alt='Flavour so good you’ll try to eat with your eyes.')
+                  time.publish-date.label-2(datetime='2022-09-15') 12/05/2024
+                .card-content
+                  p.card-subtitle.label-2.text-center Dia das M&atilde;es!
+                  h3.card-title.title-2.text-center
+                    | Evento comemora&ccedil;&atilde;o do dia das m&atilde;es,
+                    | #tragaSuaM&atilde;e!
+            li
+              .event-card.has-before(class='hover:shine')
+                .card-banner.img-holder(style='--width: 350; --height: 450;')
+                  img.img-cover(src='./img/home/images/event-2.jpg', width='350', height='450', loading='lazy', alt='Flavour so good you’ll try to eat with your eyes.')
+                  time.publish-date.label-2(datetime='2022-09-08') 24/06/2024
+                .card-content
+                  p.card-subtitle.label-2.text-center Dia Vegano!
+                  h3.card-title.title-2.text-center
+                    | Voc&ecirc; poder&aacute; provar os melhores pratos
+                    | veganos!
+            li
+              .event-card.has-before(class='hover:shine')
+                .card-banner.img-holder(style='--width: 350; --height: 450;')
+                  img.img-cover(src='./img/home/images/event-3.jpg', width='350', height='450', loading='lazy', alt='Flavour so good you’ll try to eat with your eyes.')
+                  time.publish-date.label-2(datetime='2022-09-03') 30/05/2024
+                .card-content
+                  p.card-subtitle.label-2.text-center Chegada do Inverno!
+                  h3.card-title.title-2.text-center
+                    | Evento comemora&ccedil;&atilde;o do inverno com
+                    | sopas e caldos!
+          a.btn.btn-primary(href='#')
+            span.text.text-1 Veja Nossos Eventos
+            span.text.text-2(aria-hidden='true') Veja Nossos Eventos
+      section#menu.section.menu(aria-label='menu-label')
+        .container
+          p.section-subtitle.text-center.label-2 MENU BELLA
+          h2.headline-1.section-title.text-center Mais Pedidos
+          ul.grid-list
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menuFileParmegiana.jpg', width='100', height='100', loading='lazy', alt='Lasagne')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Fil&eacute; a Parmegiana
+                    span.badge.label-1 Especial
+                    span.span.title-2 R$50.00
+                  p.card-text.label-1
+                    | Empanado ao nosso Molho artesanal de tomate sem acidez e queijo mu&ccedil;arela. Pe&ccedil;a e se surpreenda!
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menupirarucu.jpg', width='100', height='100', loading='lazy', alt='Lasagne')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Pirarucu &agrave; Muni&eacute;re
+                    span.span.title-2 R$160.00
+                  p.card-text.label-1
+                    | Pirarucu grelhado com molho de azeite, camar&atilde;o grande, alho laminado e aspargos. Acompanha arroz!
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menuCamarao.jpg', width='100', height='100', loading='lazy', alt='Butternut Pumpkin')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Camar&atilde;o &agrave; Baiana
+                    span.span.title-2 R$182.00
+                  p.card-text.label-1
+                    | Camar&atilde;o grande ao molho, um bob&oacute; de camar&atilde;o com o segredo da Bella!
+                    | Acompanha arroz e batata palha.
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menuMignonEspecial.jpg', width='100', height='100', loading='lazy', alt='Tokusen Wagyu')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Mignon Especial
+                    span.badge.label-1 Novo
+                    span.span.title-2 R$81.00
+                  p.card-text.label-1
+                    | Fil&eacute; Mignon empanado ou grelhado (escolha), com 4 queijos e Bacon EXTRA.
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menuParmegianaFrango.jpg', width='100', height='100', loading='lazy', alt='Olivas Rellenas')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Parmegiana de Frango
+                    span.span.title-2 R$60.00
+                  p.card-text.label-1
+                    | Parmegiana tradicional de Frango, grelhado ou empanado (escolha).
+            li
+              .menu-card(class='hover:card')
+                figure.card-banner.img-holder(style='--width: 100; --height: 100;')
+                  img.img-cover(src='./img/home/images/menuPicanhaAlho.jpg', width='100', height='100', loading='lazy', alt='Picanha ao Alho')
+                div
+                  .title-wrapper
+                    h3.title-3
+                      a.card-title(href='/menu') Picanha ao Alho
+                    span.span.title-2 R$65.00
+                  p.card-text.label-1
+                    | A picanha mais saborosa e suculenta do mercado, grelhada e temperada com nossos melhores sabores!
+          p.menu-text.text-center
+            | Atendendo a partir das 
+            span.span 8:00 Manh&atilde;
+            |  at&eacute; 
+            span.span 23:00 Noite
+          a.btn.btn-primary(href='/menu')
+            span.text.text-1 Ver todo o Menu
+            span.text.text-2(aria-hidden='true') Ver todo o Menu
+          img.shape.shape-2.move-anim(src='./img/home/images/shape-5.png', width='921', height='1036', loading="lazy" alt="shape")
+          img.shape.shape-3.move-anim(src='./img/home/images/shape-6.png', width='343', height='345', loading="lazy" alt="shape")
+        section.special-dish.text-center(aria-labelledby='dish-label')
+          .special-dish-banner
+            img.img-cover(src='./img/home/images/pratoEspecialBanner.jpg', width='940', height='900', loading='lazy', alt='special dish')
+          .special-dish-content.bg-black-10
+            .container
+              img.abs-img(src='./img/home/images/badge-1.png', width='28', height='41', loading='lazy', alt='badge')
+              p.section-subtitle.label-2 Prato Especial
+              h2.headline-1.section-title Parmegiana Bella
+              p.section-text
+                | O parmegiana &eacute; um prato cl&aacute;ssico da culin&aacute;ria italiana, originalmente com carne (como frango ou carne bovina), queijo e molho de tomate. Sua ess&ecirc;ncia &eacute; reconfortante e saborosa, com a carne empanada e frita, coberta com queijo derretido e molho de tomate. O contraste entre a croc&acirc;ncia da carne, a cremosidade do queijo e o sabor intenso do molho o tornam irresist&iacute;vel. Vers&aacute;til, pode ser servido com arroz, batatas fritas ou salada, sendo uma op&ccedil;&atilde;o popular em diversas ocasi&otilde;es, de refei&ccedil;&otilde;es familiares a jantares especiais. O parmegiana &eacute; uma celebra&ccedil;&atilde;o da boa comida e da tradi&ccedil;&atilde;o culin&aacute;ria italiana.
+              .wrapper
+                del.del.body-3 R$70.00
+                span.span.body-1 R$50.00
+              a.btn.btn-primary(href='/menu')
+                span.text.text-1 VEJA TODO O MENU
+                span.text.text-2(aria-hidden='true') VEJA TODO O MENU
+          img.shape.shape-1(src='./img/home/images/shape-4.png', width='179', height='359', loading='lazy', alt='')
+          img.shape.shape-2(src='./img/home/images/shape-9.png', width='351', height='462', loading='lazy', alt='')
+      section#about.section.about.text-center(aria-labelledby='about-label')
+        .container
+          .about-content
+            p#about-label.label-2.section-subtitle Nossa Hist&oacute;ria
+            h2.headline-1.section-title Todo Sabor, conta uma hist&oacute;ria.
+            p.section-text
+              | Sob a lideran&ccedil;a de Mariana, Bella Restaurante &eacute; uma jornada gastron&ocirc;mica enraizada em paix&atilde;o e tradi&ccedil;&atilde;o. Oferecendo pratos cuidadosamente elaborados, o Bella &eacute; um destino imperd&iacute;vel para quem busca simplicidade, sabor e hospitalidade.
+            .contact-label CONTATO IMEDIATO
+            a.body-1.contact-number.hover-underline(href='tel:+5567998289272') +55 (67) 99828-9272
+            a.btn.btn-primary(href='/menu')
+              span.text.text-1 VEJA MAIS
+              span.text.text-2(aria-hidden='true') VEJA MAIS
+          figure.about-banner
+            img.w-100(src='./img/home/images/sobrenosBanner.jpg', width='570', height='570', loading='lazy', alt='about banner', data-parallax-item='', data-parallax-speed='1')
+            .abs-img.abs-img-1.has-before(data-parallax-item='', data-parallax-speed='1.75')
+              img.w-100(src='./img/home/images/about-abs-image.jpg', width='285', height='285', loading='lazy', alt='')
+            .abs-img.abs-img-2.has-before
+              img(src='./img/home/images/badge-2.png', width='133', height='134', loading='lazy', alt='')
+          img.shape(src='./img/home/images/shape-3.png', width='197', height='194', loading='lazy', alt='')
+      section.section.testi.text-center.has-bg-image(style="background-image: url('./img/home/images/testimonialsBanner.jpg')", aria-label='testimonials')
+        .container
+          .quote &rdquo;
+          p.headline-2.testi-text
+            | Algumas das nossas avaliações do Google Reviews!.
+          .google-reviews
+            iframe(src='https://widgets.sociablekit.com/google-reviews/iframe/25411984', frameborder='0')
+          .wrapper
+            .separator
+            .separator
+            .separator
+          .profile
+            img.img(src='img/logobellan.png', width='100', height='100', loading='lazy', alt='Sam Jhonson')
+            p.label-2.profile-name Bella Avaliações
+      section.reservation
+        .container
+          .form.reservation-form.bg-black-10
+            form.form-left(action='')
+              h2.headline-1.text-center Reserva Online
+              p.form-text.text-center
+                | Ligue para ser atendido imediatamente 
+                a.link(href='tel:+67998289272') (67)99828-9272 ou preencha o formulário.
+              .input-wrapper
+                input.input-field(type='text', name='name', placeholder='Seu Nome', autocomplete='off')
+                input.input-field(type='tel', name='phone', placeholder='Número de Celular', autocomplete='off')
+              .input-wrapper
+                .icon-wrapper
+                  ion-icon(name='person-outline', aria-hidden='true')
+                  select.input-field(name='person')
+                    option(value='1-person') 1 Pessoa
+                    option(value='2-person') 2 Pessoas
+                    option(value='3-person') 3 Pessoas
+                    option(value='4-person') 4 Pessoas
+                    option(value='5-person') 5 Pessoas
+                    option(value='6-person') 6 Pessoas
+                    option(value='7-person') 7 Pessoas
+                  ion-icon(name='chevron-down', aria-hidden='true')
+                .icon-wrapper
+                  ion-icon(name='calendar-clear-outline', aria-hidden='true')
+                  input.input-field(type='date', name='reservation-date')
+                  ion-icon(name='chevron-down', aria-hidden='true')
+                .icon-wrapper
+                  ion-icon(name='time-outline', aria-hidden='true')
+                  select.input-field(name='person')
+                    option(value='08:00am') 08 : 00 Manh&atilde;
+                    option(value='09:00am') 09 : 00 Manh&atilde;
+                    option(value='010:00am') 10 : 00 Manh&atilde;
+                    option(value='011:00am') 11 : 00 Manh&atilde;
+                    option(value='012:00am') 12 : 00 Meio-dia
+                    option(value='01:00pm') 13 : 00 Tarde
+                    option(value='02:00pm') 14 : 00 Tarde
+                    option(value='03:00pm') 15 : 00 Tarde
+                    option(value='04:00pm') 16 : 00 Tarde
+                    option(value='05:00pm') 17 : 00 Tarde
+                    option(value='06:00pm') 18 : 00 Noite
+                    option(value='07:00pm') 19 : 00 Noite
+                    option(value='08:00pm') 20 : 00 Noite
+                    option(value='09:00pm') 21 : 00 Noite
+                    option(value='10:00pm') 22 : 00 Noite
+                    option(value='11:00pm') 23 : 00 Noite
+                  ion-icon(name='chevron-down', aria-hidden='true')
+              textarea.input-field(name='message', placeholder='Message', autocomplete='off')
+              button.btn.btn-secondary(type='submit')
+                span.text.text-1 RESERVE SUA MESA
+                span.text.text-2(aria-hidden='true') RESERVE SUA MESA
+            .form-right.text-center(style="background-image: url('./img/home/images/form-pattern.png')")
+              h2.headline-1.text-center Nos Contate
+              p.contact-label Pedidos/D&uacute;vidas/Atendimento
+              a.body-1.contact-number.hover-underline(href='tel:+67998289272') (67) 99828-9272
+              .separator
+              p.contact-label Localização 
+              address.body-4
+                | Rua Afonso Pena, 760 - Vila Aurora 
+              p.contact-label Hor&aacute;rio do Almo&ccedil;o
+              p.body-4
+                | Segunda &agrave; Domingo 
+                br
+                08:00 M - 14:30 T
+              p.contact-label Hor&aacute;rio da Janta
+              p.body-4
+                | Segunda &agrave; Domingo 
+                br
+                17:00 T - 23:00 N
+      section.section.features.text-center(aria-label='features')
+        .container
+          p.section-subtitle.label-2 Nos Escolha!
+          h2.headline-1.section-title SEJA MAIS BELLA!
+          ul.grid-list
+            li.feature-item
+              .feature-card
+                .card-icon
+                  img(src='./img/home/images/features-icon-1.png', width='100', height='80', loading='lazy', alt='icon')
+                h3.title-2.card-title Alimentos Higi&ecirc;nicos
+                p.label-1.card-text
+                  | Alimentos frescos
+                  | e bem lavados para melhor qualidade!
+            li.feature-item
+              .feature-card
+                .card-icon
+                  img(src='./img/home/images/features-icon-2.png', width='100', height='80', loading='lazy', alt='icon')
+                h3.title-2.card-title Ambiente Fresco
+                p.label-1.card-text
+                  | Um ambiente frescos
+                  | com uma atmosfera super aconchegante.
+            li.feature-item
+              .feature-card
+                .card-icon
+                  img(src='./img/home/images/features-icon-3.png', width='100', height='80', loading='lazy', alt='icon')
+                h3.title-2.card-title Chefs Habilidosos
+                p.label-1.card-text
+                  | Temos chefs de
+                  | cozinha que possuem ANOS de experi&ecirc;ncia!
+            li.feature-item
+              .feature-card
+                .card-icon
+                  img(src='./img/home/images/features-icon-4.png', width='100', height='80', loading='lazy', alt='icon')
+                h3.title-2.card-title Eventos &amp; Festas
+                p.label-1.card-text
+                  | N&oacute;s realizamos
+                  | a sua festa, cerim&ocirc;nia ou evento, aqui!
+          img.shape.shape-1(src='./img/home/images/shape-7.png', width='208', height='178', loading='lazy', alt='shape')
+          img.shape.shape-2(src='./img/home/images/shape-8.png', width='120', height='115', loading='lazy', alt='shape')
+      .footer
+        .footer-top.grid-list
+          .footer-brand.has-before.has-after
+            a.logo(href='#')
+              img(src='img/logobellan.png', width='160', height='50', loading='lazy', alt='Bella Logo')
+            address.body-4
+              | Rua Afonso Pena, 760 - Vila aurora Dourados MS 79823-120
+            a.body-4.contact-link(href='mailto:bellarestaurante@gmail.com') bellarestaurante@gmail.com
+            a.body-4.contact-link(href='tel:+67998289272') Contato Fast : (67)99828-9272
+            p.body-4
+              | Abre : 08:00 Manh&atilde; - 23:00 Noite.
+            .wrapper
+              .separator
+              .separator
+              .separator
+            p.title-1 Receba Not&iacute;cias e Promo&ccedil;&otilde;es
+            p.label-1
+              | Se Inscreva e Ganhe um Cupom 
+              span.span 15% Off.
+            form.input-wrapper(action='')
+              .icon-wrapper
+                ion-icon(name='mail-outline', aria-hidden='true')
+                input.input-field(type='email', name='email_address', placeholder='Seu E-mail', autocomplete='off')
+              button.btn.btn-secondary(type='submit')
+                span.text.text-1 Inscreva-se
+                span.text.text-2(aria-hidden='true') Inscreva-se
+          ul.footer-list
+            li
+              a.label-2.footer-link.hover-underline(href='#') Home
+            li
+              a.label-2.footer-link.hover-underline(href='#') Menus
+            li
+              a.label-2.footer-link.hover-underline(href='#') Sobre N&oacute;s
+            li
+              a.label-2.footer-link.hover-underline(href='#') Parcerias
+            li
+              a.label-2.footer-link.hover-underline(href='#') Contato
+          ul.footer-list
+            li
+              a.label-2.footer-link.hover-underline(href='#') Facebook
+            li
+              a.label-2.footer-link.hover-underline(href='https://www.instagram.com/belladeliverydourados/' target="_blank") Instagram
+            li
+              a.label-2.footer-link.hover-underline(href='#') Twitter
+            li
+              a.label-2.footer-link.hover-underline(href='#') Youtube
+            li
+              a.label-2.footer-link.hover-underline(href='https://maps.app.goo.gl/MpJrRcYRtC96GkcUA' target="_blank") Google Maps
+        .footer-bottom
+          p.copyright
+            | &copy; 2024 Bella. Todos Os Direitos Reservados | Coded by 
+            a.link(href='https://portfolio-trotta-ee4f17bbabe0.herokuapp.com/pt', target='_blank') Pedro Trotta / Castor

@@ -1,0 +1,23 @@
+mixin navItem(link, text, icon)
+  - const isActive = link === path 
+  li(class=`${isActive ? 'side-nav--active': ''}`)
+            a(href=`${link}`)
+              svg
+                use(xlink:href=`./img/icons.svg#icon-${icon}`)
+                span=text
+
+
+ul.user-navigation
+  +navItem('/me', 'Configuracões', 'user')
+  +navItem('/enderecos', 'Meus Endereços', 'house')         
+  //- +navItem('/pedidos', 'Meus Pedidos', 'order')
+if user.role === 'funcionario' || user.role === 'admin'
+  .employee-navigation
+    h1 Funcionários
+    +navItem('/employee-orders', "Manejar Pedidos", "cog")
+if user.role === 'admin'
+  .admin-navigation
+    h1 Admin
+    +navItem('/admin-menu-add', "Criar Prato", "create-recipe")
+    +navItem('/admin-menu-edit', "Editar Menu", "edit-menu")
+

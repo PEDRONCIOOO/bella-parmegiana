@@ -1,0 +1,45 @@
+{
+  "name": "bella-restaurante",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "source": "/",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js",
+    "webhook": "whcli forward --token=7d4e8365-989b-493e-9648-9f89ebba51a8 --target=http://127.0.0.1:5000/api/v1/payment/webhooks"
+  },
+  "author": "Pedro Trotta",
+  "license": "ISC",
+  "dependencies": {
+    "@mercadopago/sdk-js": "^0.0.3",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.2.0",
+    "gsap": "^3.12.5",
+    "haversine": "^1.1.1",
+    "helmet": "^7.1.0",
+    "heroku": "^10.0.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.0.9",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "pug": "^3.0.2",
+    "sharp": "^0.33.3",
+    "socket.io": "^4.7.5",
+    "validator": "^13.11.0",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.12.0"
+  }
+}

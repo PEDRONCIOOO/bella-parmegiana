@@ -1,0 +1,68 @@
+extends base 
+
+block content 
+    .section-checkout-wrap
+      .section-navigation-checkout
+        .section-navigation.your-cart-show.active-checkout
+          span Informa&ccedil;&otilde;es
+          .section-navigation.number-navigation-checkout 1
+        .section-navigation-spacer
+          .section-navigation-spacer-loading.full
+        .section-navigation.checkout-details.active-checkout
+          span Pagamento
+          .number-navigation-checkout 2
+        .section-navigation-spacer
+          .section-navigation-spacer-loading.full
+        .section-navigation.complete-order.active-checkout
+          span Finaliza&ccedil;&atilde;o
+          .number-navigation-checkout 3
+      .checkout-finish-wrapper
+        .loading-spinner-container.hidden 
+          svg.loading-spinner
+            use(href="/img/icons.svg#icon-loading")
+        .checkout-finish-icon-wrapper
+          svg
+                use(xlink:href=`/img/icons.svg#icon-success`)
+        span.checkout-finish-approved Seu pedido foi aprovado !
+        .display-cart-checkout
+            .requests-orders
+            each recipe in order.order
+              - const price = recipe.price*recipe.quantity
+              - const totalPrice = price.toLocaleString("pt-BR",{style:"currency",currency: "BRL"})
+              .shopping-cart-item(data-id='664d1c3e62cc69eff843998f')
+                .shopping-cart-item-image
+                  img(src=`/../img/recipes/${recipe.image}`, alt=recipe.name)
+                .shopping-cart-item-info
+                  .shopping-cart-item-name-price
+                    p=`${recipe.name}`
+                    span=totalPrice
+                  ul.shopping-cart-item-options
+                    li
+                      b Quantidade:
+                      | #{recipe.quantity}
+                    each option in recipe.options
+                      li
+                        b=`${option.optionTitle}:`
+                        - const arr = []
+                        - for (let i = 0; i< option.options.length; i++){arr.push(option.options[i].optionName)}
+                          |  #{arr.join(",")}
+            -const fullPrice = order.order.reduce((acc,cur)=> acc+=cur.price * cur.quantity,0)
+            -const priceWithDelivery = fullPrice + order.address.deliveryFee
+              .checkout-prices
+                .subtotais-taxa
+                    span Subtotal
+                    span Taxa de Entrega
+                    span Total
+                .valores-totais
+                    span= fullPrice.toLocaleString("pt-BR",{style:"currency",currency: "BRL"})
+                    span=order.address.deliveryFee.toLocaleString("pt-BR",{style:"currency",currency: "BRL"})
+                    span=priceWithDelivery.toLocaleString("pt-BR",{style:"currency",currency: "BRL"})
+        span.checkout-finish-id=`O ID do seu pedido é : ${order.id}`
+        span Algum problema? 
+          br
+          Contate-nos Contate-nos e forneça o ID do seu pedido.
+        span.checkout-finish-btn Entre em contato
+          svg
+            use(xlink:href=`/img/icons.svg#icon-whatsapp`)
+        button.checkout-finish-btn-2 Voltar Para Home
+        

@@ -1,0 +1,40 @@
+.error-container-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+
+
+    background-color: #fff;
+    color: #000;
+}
+
+.error-container-wrapper p{
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: rgb(255, 60, 0);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.error-container-wrapper span{
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    color: #3a3a3a;
+}
+
+.error-container-wrapper svg{
+    fill: #ffb005;
+}
+
+@media (max-width: 425px){
+    .error-container-wrapper span{
+        font-size: 16px;
+    }
+}
